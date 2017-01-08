@@ -1,0 +1,35 @@
+body{
+  background-color: #808080;
+}
+
+header{
+  font-size: 30px;
+}
+
+input {
+  width: 100%;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 12px 0;
+  box-sizing: border-box;
+  border-radius: 6px;
+
+}
+
+input[type=text]:focus {
+  background-color: #07AA9E;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 12px 0;
+  box-sizing: border-box;
+  border-radius: 6px;
+  font-size: 16px;
+  
+
+}
