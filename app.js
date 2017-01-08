@@ -8,7 +8,7 @@ $(document).ready(function() {
     event.preventDefault();
 
     var formData = {};
-    var array = $(this).serializeArray();
+    var formAsArray = $(this).serializeArray();
 
     formAsArray.forEach(function(input){
     formData[input.name] = input.value;
@@ -25,8 +25,8 @@ $(document).ready(function() {
    //create a div jquery object
    var $emp = $('<div class="employee"></div>');
 
-   $emp.append('<label for="employeeName">Name:</label>');
-  $emp.append('<p name="employeeName">' + emp.employeeFirstName + ' ' +       emp.employeeLastName + '</p>');
+  $emp.append('<label for="employeeName">Name:</label>');
+  $emp.append('<p name="employeeName">' + emp.employeeFirstName + ' ' + emp.employeeLastName + '</p>');
   $emp.append('<label for="employeeIdNumber">ID Number:</label>');
   $emp.append('<p>' + emp.employeeIdNumber + '</p>');
   $emp.append('<label for="employeeJobTitle">Job Title:</label>');
