@@ -1,41 +1,43 @@
 $(document).ready(function() {
 
+  console.log('document is ready');
+
   $('form').on('submit', function (event) {
     console.log('form submitted');
 
     event.preventDefault();
 
-    console.log('result of calling serialize=', $(this).serialize());
-    console.log('result of calling serializeArray=', $(this).serializeArray());
-
+    var formData = {};
     var array = $(this).serializeArray();
 
-    var formData = {};
-
-    array.forEach(function(input){
+    formAsArray.forEach(function(input){
     formData[input.name] = input.value;
   });
 
- console.log('formData', formData);
+ appendDom(formData);
 
- var employeeFirstName = '<p>' + formData.employeeFirstName + '</p>';
- var employeeLastName = '<p>' + formData.employeeLastName + '</p>';
- var employeeIdNumber = '<p>' + formData.employeeIdNumber + '</p>';
- var employeeJobTitle = '<p>' + formData.employeeJobTitle + '</p>';
- var employeeAnnualSalary = '<p>' + formData.employeeAnnualSalary + '</p>';
+ clearForm();
 
- var $employee = $('<div></div>');
-
- $employee.append(employeeFirstName);
- $employee.append(employeeLastName);
- $employee.append(employeeIdNumber);
- $employee.append(employeeJobTitle);
- $employee.append(employeeAnnualSalary);
-
- $('#employees').append($employee);
-
- $(this).children('input[type=text]').val('');
- $(this).children('input[type=text]').val('');
   });
-
 });
+
+ function appendDom(emp) {
+   //create a div jquery object
+   var $emp = $('<div class="employee"></div>');
+
+   $emp.append('<label for="employeeName">Name:</label>');
+  $emp.append('<p name="employeeName">' + emp.employeeFirstName + ' ' +       emp.employeeLastName + '</p>');
+  $emp.append('<label for="employeeIdNumber">ID Number:</label>');
+  $emp.append('<p>' + emp.employeeIdNumber + '</p>');
+  $emp.append('<label for="employeeJobTitle">Job Title:</label>');
+  $emp.append('<p>' + emp.employeeJobTitle + '</p>');
+  $emp.append('<label for="employeeAnnualSalary">Annual Salary:</label>');
+  $emp.append('<p>' + emp.employeeAnnualSalary + '</p>');
+
+  //append div to DOM
+  $('#employees').append($emp);
+ }
+
+ function clearForm() {
+   $('form').find('input[type=text]').val('');
+ }
