@@ -6,7 +6,8 @@
 The goal of the first weekend challenge is to create a form with basic functionality.
 
 Form parameters:
--[]From that collects employee data
--[]A submit button that clears out the form and stores the information
--[]The information then appended to the DOM
--[]Calculate combined employee salary and return monthly cost of salaries
+---
+-From that collects employee data
+-A submit button that clears out the form and stores the information
+-The information then appended to the DOM
+-Calculate combined employee salary and return monthly cost of salaries
