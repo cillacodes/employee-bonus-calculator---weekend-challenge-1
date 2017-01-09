@@ -10,6 +10,11 @@ input {
   width: 100%;
 }
 
+.employee{
+  display: inline-block;
+  margin: 10px 10px;
+}
+
 input[type=text] {
   width: 100%;
   padding: 12px 20px;
@@ -30,6 +35,6 @@ input[type=button], input[type=submit], input[type=reset] {
   box-sizing: border-box;
   border-radius: 6px;
   font-size: 16px;
-  
+
 
 }
