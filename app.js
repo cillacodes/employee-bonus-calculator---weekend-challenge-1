@@ -37,16 +37,21 @@ $(document).ready(function() {
   //append div to DOM
   $('#employees').append($emp);
 
+
 //div created to store monthly salary expenditures
 var $calculateMonthly = $('<div id="monthlySalary"</div>');
 //variable to grab employeeAnnualSalary, divide by 12 and return a number with 2 decimal points
 var monthlySalary = parseFloat((emp.employeeAnnualSalary/12)).toFixed(2);
 
-
 $calculateMonthly.append('<p>' + monthlySalary + '</p>');
 
 //append monthlySalary to DOM
 $('#monthlySalaryExpenditures').append($calculateMonthly);
+
+
+//$("#button").click, (function() {
+  //$(this).remove("#employees");
+//});
 
  }
 
