@@ -33,6 +33,7 @@ $(document).ready(function() {
   $emp.append('<p>' + emp.employeeJobTitle + '</p>');
   $emp.append('<label for="employeeAnnualSalary"><b>Annual Salary:</b></label>');
   $emp.append('<p>' + emp.employeeAnnualSalary + '</p>');
+  $emp.append('<button>' + 'Delete' + '</button>');
 
   //append div to DOM
   $('#employees').append($emp);
@@ -49,9 +50,10 @@ $calculateMonthly.append('<p>' + monthlySalary + '</p>');
 $('#monthlySalaryExpenditures').append($calculateMonthly);
 
 
-//$("#button").click, (function() {
-  //$(this).remove("#employees");
-//});
+$('button').click (function() {
+$(this).parent('.employee').remove();
+});
+
 
  }
 
